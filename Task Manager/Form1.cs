@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Task_Manager;
+
+namespace Expenses_Tracker
+{
+    public partial class Menu : Form
+    {
+        public Menu()
+        {
+            InitializeComponent();
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            CreateTask createForm = new CreateTask();
+            this.Hide();
+            createForm.ShowDialog();
+            this.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ManageTasks manageForm = new ManageTasks();
+            this.Hide();
+            manageForm.ShowDialog();
+            this.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Text = "Main Menu";
+        }
+    }
+}
